@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kugaya Landscaping & Gardening — Mombasa, Kenya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── HERO (home only) ── */
+    .hero {
+      min-height: 86vh;
+      background:
+        linear-gradient(160deg, rgba(26,58,31,0.72) 0%, rgba(45,90,39,0.55) 60%, rgba(74,140,63,0.3) 100%),
+        url('https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Coconut_palm.jpeg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero-inner { max-width: 720px; animation: fadeUp 0.9s ease both; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #e0f5da;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(4px);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { color: #6dbf5e; font-style: italic; }
+    .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.88); margin-bottom: 36px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-outline-hero {
+      border: 2px solid rgba(255,255,255,0.7);
+      color: #fff;
+      padding: 13px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-outline-hero:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+
+    /* Plants grid */
+    .plants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .plant-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .plant-card:hover { transform: translateY(-6px); box-shadow: 0 10px 32px rgba(0,0,0,0.12); }
+    .plant-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .plant-card-body { padding: 18px 20px 22px; }
+    .plant-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4a8c3f; margin-bottom: 6px; }
+    .plant-card-body h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #1a3a1f; margin-bottom: 12px; }
+    .plant-link { font-size: 0.83rem; font-weight: 600; color: #4a8c3f; text-decoration: none; }
+    .plant-link:hover { text-decoration: underline; }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 36px 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      border-top: 4px solid #6dbf5e;
+      transition: transform 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); }
+    .service-icon { font-size: 2rem; margin-bottom: 14px; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #1a3a1f; margin-bottom: 10px; }
+    .service-card p { color: #555; font-size: 0.9rem; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🌿 &nbsp; 📍 Mtwapa ATC, Mombasa</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Garden Logo"/>
+    <div class="nav-logo-text">
+      <strong>Kugaya</strong>
+      <span>Landscaping & Gardening</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="main">
+  <div class="hero-inner">
+    <div class="hero-badge">🌿 Mombasa's Trusted Garden Centre</div>
+    <h1>Kugaya's Garden &amp; <em>Landscaping</em></h1>
+    <p>Your trusted garden for quality plants, professional landscaping, and garden maintenance services.</p>
+    <div class="hero-btns">
+      <a href="products.html" class="btn-primary">View Our Plants →</a>
+      <a href="contact.html" class="btn-outline-hero">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Plants -->
+<section>
+  <p class="section-label">Our Collection</p>
+  <h2 class="section-title">Featured Plants</h2>
+  <p class="section-sub">Hand-selected tropical plants perfect for the Mombasa climate</p>
+  <div class="plants-grid">
+    <div class="plant-card">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Golden_palm.jpeg" alt="Golden Palm"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Golden Palm</h3>
+        <a href="products.html" class="plant-link">View Details</a>
+      </div>
+    </div>
+    <div class="plant-card">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Coconut_palm.jpeg" alt="Coconut Palm"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Coconut Palm</h3>
+        <a href="products.html" class="plant-link">View Details</a>
+      </div>
+    </div>
+    <div class="plant-card">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Hibiscus_virgeted.jpeg" alt="Variegated Hibiscus"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Flowers</div>
+        <h3>Variegated Hibiscus</h3>
+        <a href="products.html" class="plant-link">View Details</a>
+      </div>
+    </div>
+    <div class="plant-card">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Agronema_plant.jpeg" alt="Agronema Plant"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Indoor</div>
+        <h3>Agronema Plant</h3>
+        <a href="products.html" class="plant-link">View Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section style="background:var(--cream);">
+  <p class="section-label">What We Do</p>
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">From design to maintenance, we bring your garden dreams to life</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🌳</div>
+      <h3>Tree Arrangement & Gardening</h3>
+      <p>Strategic tree placement, spacing, and ongoing care for beautiful, balanced landscapes.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <h3>Grass & Garden Installation</h3>
+      <p>Professional Pemba grass installation and complete garden setup for lush, green spaces.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Complete Garden Design</h3>
+      <p>End-to-end garden design including rock gardens, hardscaping, and planting layouts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section>
+  <p class="section-label">Why Kugaya</p>
+  <h2 class="section-title">Why Choose Us</h2>
+  <p class="section-sub">Trusted by homeowners and businesses across Mombasa</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">📍</div><h3>Local Expertise</h3><p>Deep knowledge of Mombasa's tropical climate and coastal soil conditions</p></div>
+    <div class="why-card"><div class="why-icon">🌱</div><h3>Quality Plants</h3><p>Healthy, well-nurtured plants sourced and grown with care</p></div>
+    <div class="why-card"><div class="why-icon">👷</div><h3>Professional Team</h3><p>Experienced landscapers committed to excellence in every project</p></div>
+    <div class="why-card"><div class="why-icon">💰</div><h3>Fair Pricing</h3><p>Competitive rates without compromising on quality or service</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Ready to Transform Your Garden?</h2>
+  <p>Get in touch today for a free consultation and quote on your landscaping project.</p>
+  <a href="contact.html" class="btn-gold">Get a Free Quote →</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+      <strong>Kugaya</strong>
+      <div class="sub">Landscaping & Gardening</div>
+      <p>Premium plants and professional landscaping services in Mombasa, Kenya. Transforming outdoor spaces since day one.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Plants</a></li>
+        <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="landscaping.html">Tree Arrangement</a></li>
+        <li><a href="landscaping.html">Grass Installation</a></li>
+        <li><a href="landscaping.html">Rock Gardens</a></li>
+        <li><a href="landscaping.html">Garden Design</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li><a href="tel:+254792648580">+254 792 648 580</a></li>
+        <li><a href="tel:+254795968974">+254 795 968 974</a></li>
+        <li><a href="mailto:kugayasgarden@gmail.com">kugayasgarden@gmail.com</a></li>
+        <li><a href="https://maps.google.com/?q=Mtwapa+ATC+Mombasa" target="_blank">Mtwapa ATC, Mombasa</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Kugaya Landscaping & Gardening. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://wa.me/254792648580" target="_blank">💬</a>
+      <a href="https://www.instagram.com/kugayasgarden" target="_blank">📷</a>
+      <a href="https://www.facebook.com/profile.php?id=61584452922600" target="_blank">👤</a>
+      <a href="https://www.tiktok.com/@kugayasgarden" target="_blank">🎵</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254792648580" class="wa-float" target="_blank">💬</a>
+</body>
+</html>

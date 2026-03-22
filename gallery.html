@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — Kugaya Landscaping & Gardening</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: block;
+    }
+    .gallery-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 28px rgba(0,0,0,0.2); }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px; right: 28px;
+      color: #fff;
+      font-size: 2.2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-prev, .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🌿 &nbsp; 📍 Mtwapa ATC, Mombasa</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+    <div class="nav-logo-text">
+      <strong>Kugaya</strong>
+      <span>Landscaping & Gardening</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero" id="main">
+  <h1 class="fade-up">Our Gallery</h1>
+  <p class="fade-up">A showcase of our gardens, plants, and landscaping projects</p>
+</div>
+
+<section>
+  <div class="gallery-grid" id="galleryGrid">
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_1.jpeg"  alt="Garden 1"  onclick="openLightbox(0)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_2.jpeg"  alt="Garden 2"  onclick="openLightbox(1)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_3.jpeg"  alt="Garden 3"  onclick="openLightbox(2)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_4.jpeg"  alt="Garden 4"  onclick="openLightbox(3)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_5.jpeg"  alt="Garden 5"  onclick="openLightbox(4)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_6.jpeg"  alt="Garden 6"  onclick="openLightbox(5)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_7.jpeg"  alt="Garden 7"  onclick="openLightbox(6)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_8.jpeg"  alt="Garden 8"  onclick="openLightbox(7)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_9.jpeg"  alt="Garden 9"  onclick="openLightbox(8)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_10.jpeg" alt="Garden 10" onclick="openLightbox(9)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_11.jpeg" alt="Garden 11" onclick="openLightbox(10)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_12.jpeg" alt="Garden 12" onclick="openLightbox(11)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_13.jpeg" alt="Garden 13" onclick="openLightbox(12)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_14.jpeg" alt="Garden 14" onclick="openLightbox(13)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_15.jpeg" alt="Garden 15" onclick="openLightbox(14)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_16.jpeg" alt="Garden 16" onclick="openLightbox(15)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_17.jpeg" alt="Garden 17" onclick="openLightbox(16)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/general_garden/garden_18.jpeg" alt="Garden 18" onclick="openLightbox(17)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/vibe/vibe_1.jpeg"               alt="Vibe 1"    onclick="openLightbox(18)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/vibe/vibe_2.jpeg"               alt="Vibe 2"    onclick="openLightbox(19)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/vibe/vibe_3.jpeg"               alt="Vibe 3"    onclick="openLightbox(20)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/vibe/vibe_4.jpeg"               alt="Vibe 4"    onclick="openLightbox(21)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Arranging and Distacing of Axecks Trees.jpeg" alt="Tree arrangement" onclick="openLightbox(22)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Axecks tree gardening.jpeg"                   alt="Tree gardening"   onclick="openLightbox(23)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Landscaping 101.jpeg"                          alt="Landscaping 101"  onclick="openLightbox(24)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Landscaping.jpeg"                              alt="Landscaping"      onclick="openLightbox(25)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Pemba grass gardening.jpeg"                    alt="Pemba grass"      onclick="openLightbox(26)"/>
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Rock Garden With Hills.jpeg"                   alt="Rock garden"      onclick="openLightbox(27)"/>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Looking for Plants or Garden Services?</h2>
+  <p>Contact us today and let us grow something beautiful together.</p>
+  <a href="contact.html" class="btn-gold">Get in Touch →</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+      <strong>Kugaya</strong>
+      <div class="sub">Landscaping & Gardening</div>
+      <p>Premium plants and professional landscaping services in Mombasa, Kenya. Transforming outdoor spaces since day one.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Plants</a></li>
+        <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="landscaping.html">Tree Arrangement</a></li>
+        <li><a href="landscaping.html">Grass Installation</a></li>
+        <li><a href="landscaping.html">Rock Gardens</a></li>
+        <li><a href="landscaping.html">Garden Design</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li><a href="tel:+254792648580">+254 792 648 580</a></li>
+        <li><a href="tel:+254795968974">+254 795 968 974</a></li>
+        <li><a href="mailto:kugayasgarden@gmail.com">kugayasgarden@gmail.com</a></li>
+        <li><a href="https://maps.google.com/?q=Mtwapa+ATC+Mombasa" target="_blank">Mtwapa ATC, Mombasa</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Kugaya Landscaping & Gardening. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://wa.me/254792648580" target="_blank">💬</a>
+      <a href="https://www.instagram.com/kugayasgarden" target="_blank">📷</a>
+      <a href="https://www.facebook.com/profile.php?id=61584452922600" target="_blank">👤</a>
+      <a href="https://www.tiktok.com/@kugayasgarden" target="_blank">🎵</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254792648580" class="wa-float" target="_blank">💬</a>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLb()">&times;</span>
+  <button class="lightbox-prev" onclick="event.stopPropagation(); changeImg(-1)">&#8249;</button>
+  <img id="lbImg" src="" alt="Gallery image"/>
+  <button class="lightbox-next" onclick="event.stopPropagation(); changeImg(1)">&#8250;</button>
+</div>
+
+<script>
+  const imgs = Array.from(document.querySelectorAll('#galleryGrid img')).map(i => i.src);
+  let cur = 0;
+  function openLightbox(i) {
+    cur = i;
+    document.getElementById('lbImg').src = imgs[i];
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeLightbox(e) { if (e.target === document.getElementById('lightbox')) closeLb(); }
+  function changeImg(dir) {
+    cur = (cur + dir + imgs.length) % imgs.length;
+    document.getElementById('lbImg').src = imgs[cur];
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') changeImg(1);
+    if (e.key === 'ArrowLeft') changeImg(-1);
+  });
+</script>
+</body>
+</html>

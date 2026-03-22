@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landscaping & Gardening Services — Kugaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .services-list { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .service-item.reverse { direction: rtl; }
+    .service-item.reverse > * { direction: ltr; }
+
+    .service-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    }
+
+    .service-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+    }
+
+    .service-text p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 22px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .service-item, .service-item.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .service-item img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🌿 &nbsp; 📍 Mtwapa ATC, Mombasa</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+    <div class="nav-logo-text">
+      <strong>Kugaya</strong>
+      <span>Landscaping & Gardening</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="landscaping.html" class="active">Landscaping & Gardening</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero" id="main">
+  <h1 class="fade-up">Landscaping & Gardening</h1>
+  <p class="fade-up">From full garden design to maintenance and planting, we provide professional services for homes, hotels, and businesses</p>
+</div>
+
+<!-- Services -->
+<section>
+  <p class="section-label">Our Services</p>
+  <h2 class="section-title">What We Offer</h2>
+  <p class="section-sub">Professional landscaping and gardening services tailored to your needs</p>
+
+  <div class="services-list">
+
+    <div class="service-item">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Arranging and Distacing of Axecks Trees.jpeg" alt="Tree arrangement and spacing"/>
+      <div class="service-text">
+        <h3>Tree Arrangement & Spacing</h3>
+        <p>Strategic placement and spacing of trees to create balanced, visually appealing landscapes. We consider growth patterns, shade coverage, and aesthetic harmony to design the perfect layout for your property.</p>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Get a Quote</a>
+      </div>
+    </div>
+
+    <div class="service-item reverse">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Axecks tree gardening.jpeg" alt="Tree gardening"/>
+      <div class="service-text">
+        <h3>Tree Gardening</h3>
+        <p>Complete tree care including planting, pruning, shaping, and ongoing maintenance. We nurture trees from seedlings to maturity, ensuring healthy growth and beautiful form throughout every season.</p>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Get a Quote</a>
+      </div>
+    </div>
+
+    <div class="service-item">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Landscaping 101.jpeg" alt="Landscaping preparation and planning"/>
+      <div class="service-text">
+        <h3>Landscaping Preparation & Planning</h3>
+        <p>Thorough site assessment, soil analysis, and detailed landscape planning before any work begins. We create comprehensive plans that account for drainage, sunlight, soil conditions, and your vision for the space.</p>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Get a Quote</a>
+      </div>
+    </div>
+
+    <div class="service-item reverse">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Landscaping.jpeg" alt="General landscaping work"/>
+      <div class="service-text">
+        <h3>General Landscaping Work</h3>
+        <p>Full-service landscaping for residential and commercial properties. From ground preparation and planting to hardscaping and finishing touches, we handle every aspect of transforming your outdoor space.</p>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Get a Quote</a>
+      </div>
+    </div>
+
+    <div class="service-item">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Pemba grass gardening.jpeg" alt="Pemba grass installation"/>
+      <div class="service-text">
+        <h3>Grass Installation</h3>
+        <p>Professional installation of Pemba grass and other varieties suited to Mombasa's coastal climate. We prepare the ground, lay the turf, and provide aftercare guidance for a lush, green lawn that thrives year-round.</p>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Get a Quote</a>
+      </div>
+    </div>
+
+    <div class="service-item reverse">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Rock Garden With Hills.jpeg" alt="Rock garden with hills"/>
+      <div class="service-text">
+        <h3>Rock Gardens</h3>
+        <p>Design and construction of beautiful rock gardens that combine natural stone with drought-resistant plants. A low-maintenance landscaping option that adds texture, structure, and visual interest to any garden.</p>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Get a Quote</a>
+      </div>
+    </div>
+
+    <div class="service-item">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/landscaping/Planting of Pember grass.jpeg" alt="Complete garden design"/>
+      <div class="service-text">
+        <h3>Complete Garden Design</h3>
+        <p>End-to-end garden design from concept to completion. We create cohesive, stunning outdoor environments that combine plants, hardscaping, lighting, and water features into a space that reflects your vision and lifestyle.</p>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Get a Quote</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Why Us -->
+<section style="background:var(--cream);">
+  <p class="section-label">Our Approach</p>
+  <h2 class="section-title">Why Work With Us</h2>
+  <p class="section-sub">Happy people create beautiful spaces. Our team works together with care, respect, and love for plants and nature.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">📍</div><h3>Local Knowledge</h3><p>Deep understanding of Mombasa's coastal climate, soil types, and which plants thrive here</p></div>
+    <div class="why-card"><div class="why-icon">👷</div><h3>Experienced Team</h3><p>Skilled landscapers and gardeners passionate about creating beautiful outdoor spaces</p></div>
+    <div class="why-card"><div class="why-icon">🏠</div><h3>Any Property</h3><p>We serve homes, hotels, offices, and commercial properties of all sizes</p></div>
+    <div class="why-card"><div class="why-icon">🤝</div><h3>End-to-End Service</h3><p>From initial consultation and planning through to installation and ongoing maintenance</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Looking for Plants or Garden Services?</h2>
+  <p>Contact us today and let us grow something beautiful together.</p>
+  <a href="contact.html" class="btn-gold">Contact Kugaya's Garden →</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+      <strong>Kugaya</strong>
+      <div class="sub">Landscaping & Gardening</div>
+      <p>Premium plants and professional landscaping services in Mombasa, Kenya. Transforming outdoor spaces since day one.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Plants</a></li>
+        <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="landscaping.html">Tree Arrangement</a></li>
+        <li><a href="landscaping.html">Grass Installation</a></li>
+        <li><a href="landscaping.html">Rock Gardens</a></li>
+        <li><a href="landscaping.html">Garden Design</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li><a href="tel:+254792648580">+254 792 648 580</a></li>
+        <li><a href="tel:+254795968974">+254 795 968 974</a></li>
+        <li><a href="mailto:kugayasgarden@gmail.com">kugayasgarden@gmail.com</a></li>
+        <li><a href="https://maps.google.com/?q=Mtwapa+ATC+Mombasa" target="_blank">Mtwapa ATC, Mombasa</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Kugaya Landscaping & Gardening. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://wa.me/254792648580" target="_blank">💬</a>
+      <a href="https://www.instagram.com/kugayasgarden" target="_blank">📷</a>
+      <a href="https://www.facebook.com/profile.php?id=61584452922600" target="_blank">👤</a>
+      <a href="https://www.tiktok.com/@kugayasgarden" target="_blank">🎵</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254792648580" class="wa-float" target="_blank">💬</a>
+</body>
+</html>

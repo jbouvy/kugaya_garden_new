@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Plants — Kugaya Landscaping & Gardening</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 44px;
+    }
+    .filter-btn {
+      padding: 9px 22px;
+      border-radius: 100px;
+      border: 2px solid var(--green-light);
+      background: transparent;
+      color: var(--green-dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--green-light);
+      color: #fff;
+      border-color: var(--green-light);
+    }
+    .plants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .plant-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .plant-card:hover { transform: translateY(-6px); box-shadow: 0 10px 32px rgba(0,0,0,0.12); }
+    .plant-card img { width:100%; height:220px; object-fit:cover; display:block; }
+    .plant-card-body { padding: 18px 20px 22px; }
+    .plant-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 6px;
+    }
+    .plant-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+    }
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 48px 20px;
+      color: var(--text-muted);
+      grid-column: 1 / -1;
+    }
+    .no-results a { color: var(--green-light); }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🌿 &nbsp; 📍 Mtwapa ATC, Mombasa</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+    <div class="nav-logo-text">
+      <strong>Kugaya</strong>
+      <span>Landscaping & Gardening</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero" id="main">
+  <h1 class="fade-up">Our Plants</h1>
+  <p class="fade-up">High-quality plants for gardens, homes, hotels, offices, and outdoor environments</p>
+</div>
+
+<section>
+  <p class="section-label">Browse by Category</p>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filter('all', this)">All Plants</button>
+    <button class="filter-btn" onclick="filter('indoor', this)">Indoor</button>
+    <button class="filter-btn" onclick="filter('outdoor', this)">Outdoor</button>
+    <button class="filter-btn" onclick="filter('trees', this)">Trees</button>
+    <button class="filter-btn" onclick="filter('flowers', this)">Flowers</button>
+  </div>
+
+  <div class="plants-grid" id="plantsGrid">
+
+    <div class="plant-card" data-cat="indoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Agronema_plant.jpeg" alt="Agronema Plant"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Indoor</div>
+        <h3>Agronema Plant</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="flowers">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Alamander_yellow_flowers.jpeg" alt="Alamander Yellow Flowers"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Flowers</div>
+        <h3>Alamander Yellow Flowers</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Axecks_Trees.jpeg" alt="Axecks Trees"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Axecks Trees</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Big_Bottle_Palm.jpeg" alt="Big Bottle Palm"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Big Bottle Palm</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Coconut_palm.jpeg" alt="Coconut Palm"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Coconut Palm</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="outdoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Crotons.jpeg" alt="Crotons"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Outdoor</div>
+        <h3>Crotons</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="indoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Definbcher.jpeg" alt="Definbcher"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Indoor</div>
+        <h3>Definbcher</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="indoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/French_Pan.jpeg" alt="French Pan"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Indoor</div>
+        <h3>French Pan</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="outdoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Golden_Palm_and_Red_cordl.jpeg" alt="Golden Palm & Red Cordyline"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Outdoor</div>
+        <h3>Golden Palm &amp; Red Cordyline</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Golden_palm.jpeg" alt="Golden Palm"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Golden Palm</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="outdoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Green_and_Red_Cordline.jpeg" alt="Green & Red Cordyline"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Outdoor</div>
+        <h3>Green &amp; Red Cordyline</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="flowers">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Hibiscus_virgeted.jpeg" alt="Variegated Hibiscus"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Flowers</div>
+        <h3>Variegated Hibiscus</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="outdoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Jerusalem.jpeg" alt="Jerusalem Plant"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Outdoor</div>
+        <h3>Jerusalem Plant</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="outdoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Jerusalem_ground_cover.jpeg" alt="Jerusalem Ground Cover"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Outdoor</div>
+        <h3>Jerusalem Ground Cover</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Likwaler_Palm.jpeg" alt="Likwaler Palm"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Likwaler Palm</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Medium_Bottle_Palms.jpeg" alt="Medium Bottle Palms"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Medium Bottle Palms</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Medium_Gold_Palms.jpeg" alt="Medium Gold Palms"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Medium Gold Palms</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Medium_Travelas_Palms.jpeg" alt="Medium Travelas Palms"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Medium Travelas Palms</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Peacock_Palms.jpeg" alt="Peacock Palms"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Peacock Palms</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="indoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Philo.jpeg" alt="Philo Plant"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Indoor</div>
+        <h3>Philo Plant</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="flowers">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Port_Flowers.jpeg" alt="Port Flowers"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Flowers</div>
+        <h3>Port Flowers</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="outdoor">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Red_cordline.jpeg" alt="Red Cordyline"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Outdoor</div>
+        <h3>Red Cordyline</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="trees">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/Royal_Palms.jpeg" alt="Royal Palms"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Trees</div>
+        <h3>Royal Palms</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="plant-card" data-cat="flowers">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/images/products/White_Hibiscus.jpeg" alt="White Hibiscus"/>
+      <div class="plant-card-body">
+        <div class="plant-tag">Flowers</div>
+        <h3>White Hibiscus</h3>
+        <a href="https://wa.me/254792648580" target="_blank" class="btn-wa">💬 Inquire via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="no-results" id="noResults">
+      No plants found in this category. Try a different filter or <a href="contact.html">contact us</a> for specific requests.
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Can't Find What You're Looking For?</h2>
+  <p>We source a wide variety of plants beyond what's listed here. Reach out and let us know what you need.</p>
+  <a href="contact.html" class="btn-gold">Contact Us →</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+      <strong>Kugaya</strong>
+      <div class="sub">Landscaping & Gardening</div>
+      <p>Premium plants and professional landscaping services in Mombasa, Kenya. Transforming outdoor spaces since day one.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Plants</a></li>
+        <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="landscaping.html">Tree Arrangement</a></li>
+        <li><a href="landscaping.html">Grass Installation</a></li>
+        <li><a href="landscaping.html">Rock Gardens</a></li>
+        <li><a href="landscaping.html">Garden Design</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li><a href="tel:+254792648580">+254 792 648 580</a></li>
+        <li><a href="tel:+254795968974">+254 795 968 974</a></li>
+        <li><a href="mailto:kugayasgarden@gmail.com">kugayasgarden@gmail.com</a></li>
+        <li><a href="https://maps.google.com/?q=Mtwapa+ATC+Mombasa" target="_blank">Mtwapa ATC, Mombasa</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Kugaya Landscaping & Gardening. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://wa.me/254792648580" target="_blank">💬</a>
+      <a href="https://www.instagram.com/kugayasgarden" target="_blank">📷</a>
+      <a href="https://www.facebook.com/profile.php?id=61584452922600" target="_blank">👤</a>
+      <a href="https://www.tiktok.com/@kugayasgarden" target="_blank">🎵</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254792648580" class="wa-float" target="_blank">💬</a>
+
+<script>
+function filter(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('.plant-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const show = cat === 'all' || card.dataset.cat === cat;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+}
+</script>
+</body>
+</html>

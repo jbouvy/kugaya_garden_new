@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — Kugaya Landscaping & Gardening</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    /* Form */
+    .form-group { margin-bottom: 22px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0d8;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      background: #fff;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--green-light); }
+    .form-group textarea { height: 130px; resize: vertical; }
+    .field-error {
+      font-size: 0.78rem;
+      color: #c0392b;
+      margin-top: 5px;
+      display: none;
+    }
+    .submit-btn {
+      background: var(--green-dark);
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      width: 100%;
+    }
+    .submit-btn:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .success-msg {
+      display: none;
+      background: #e8f5e3;
+      border: 1px solid var(--green-accent);
+      color: var(--green-dark);
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin-top: 16px;
+    }
+
+    /* Info panel */
+    .info-block {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+    .info-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+    .info-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .info-icon { font-size: 1.1rem; margin-top: 2px; }
+    .info-text { flex: 1; }
+    .info-text strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 2px;
+    }
+    .info-text a, .info-text span {
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .info-text a:hover { color: var(--green-light); text-decoration: underline; }
+
+    .hours-table { width: 100%; font-size: 0.88rem; }
+    .hours-table tr td { padding: 5px 0; }
+    .hours-table td:last-child { text-align: right; color: var(--text-muted); }
+
+    .social-row { display: flex; gap: 12px; margin-top: 8px; }
+    .social-row a {
+      display: inline-flex;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--green-dark);
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .social-row a:hover { background: var(--green-light); }
+
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🌿 &nbsp; 📍 Mtwapa ATC, Mombasa</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+    <div class="nav-logo-text">
+      <strong>Kugaya</strong>
+      <span>Landscaping & Gardening</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero" id="main">
+  <h1 class="fade-up">Get In Touch</h1>
+  <p class="fade-up">We'd love to hear from you — reach out for quotes, inquiries, or just to say hello</p>
+</div>
+
+<section>
+  <div class="contact-layout">
+
+    <!-- Form -->
+    <div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--green-dark); margin-bottom:24px;">Send Us a Message</h2>
+      <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:28px;">Fill out the form below and we'll get back to you as soon as possible.</p>
+
+      <div id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" placeholder="Your name"/>
+          <div class="field-error" id="nameErr">Please enter your name</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="your@email.com"/>
+          <div class="field-error" id="emailErr">Please enter a valid email address</div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+254 ..."/>
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" placeholder="Tell us about your garden project..."></textarea>
+          <div class="field-error" id="msgErr">Please enter a message</div>
+        </div>
+        <button class="submit-btn" onclick="submitForm()">Send Message →</button>
+        <div class="success-msg" id="successMsg">
+          ✅ Thank you! Your message has been sent. We'll get back to you shortly.
+        </div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div>
+      <div class="info-block">
+        <h3>🕐 Opening Times</h3>
+        <table class="hours-table">
+          <tr><td>Monday – Saturday</td><td>8:00 AM – 6:00 PM</td></tr>
+          <tr><td>Sunday</td><td>By appointment</td></tr>
+        </table>
+      </div>
+
+      <div class="info-block">
+        <h3>📞 Contact Us Directly</h3>
+        <div class="info-row">
+          <div class="info-icon">📱</div>
+          <div class="info-text"><strong>Phone</strong><a href="tel:+254792648580">+254 792 648 580</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📱</div>
+          <div class="info-text"><strong>Phone 2</strong><a href="tel:+254795968974">+254 795 968 974</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">✉️</div>
+          <div class="info-text"><strong>Email</strong><a href="mailto:kugayasgarden@gmail.com">kugayasgarden@gmail.com</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">💬</div>
+          <div class="info-text"><strong>WhatsApp</strong><a href="https://wa.me/254792648580" target="_blank">Chat with us instantly</a></div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3>🌐 Follow Us</h3>
+        <div class="social-row">
+          <a href="https://wa.me/254792648580" target="_blank" title="WhatsApp">💬</a>
+          <a href="https://www.instagram.com/kugayasgarden" target="_blank" title="Instagram">📷</a>
+          <a href="https://www.facebook.com/profile.php?id=61584452922600" target="_blank" title="Facebook">👤</a>
+          <a href="https://www.tiktok.com/@kugayasgarden" target="_blank" title="TikTok">🎵</a>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3>📍 Our Location</h3>
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div class="info-text"><strong>Address</strong><span>Mtwapa ATC, Mombasa, Kenya</span></div>
+        </div>
+        <a href="https://maps.google.com/?q=Mtwapa+ATC+Mombasa" target="_blank" class="btn-outline-dark" style="margin-top:12px; font-size:0.85rem; padding:10px 20px;">View on Google Maps →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://jellebouvy-svg.github.io/kugaya_garden_website/kugaya_logo.jpg" alt="Kugaya Logo"/>
+      <strong>Kugaya</strong>
+      <div class="sub">Landscaping & Gardening</div>
+      <p>Premium plants and professional landscaping services in Mombasa, Kenya. Transforming outdoor spaces since day one.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Plants</a></li>
+        <li><a href="landscaping.html">Landscaping & Gardening</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="landscaping.html">Tree Arrangement</a></li>
+        <li><a href="landscaping.html">Grass Installation</a></li>
+        <li><a href="landscaping.html">Rock Gardens</a></li>
+        <li><a href="landscaping.html">Garden Design</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li><a href="tel:+254792648580">+254 792 648 580</a></li>
+        <li><a href="tel:+254795968974">+254 795 968 974</a></li>
+        <li><a href="mailto:kugayasgarden@gmail.com">kugayasgarden@gmail.com</a></li>
+        <li><a href="https://maps.google.com/?q=Mtwapa+ATC+Mombasa" target="_blank">Mtwapa ATC, Mombasa</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Kugaya Landscaping & Gardening. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://wa.me/254792648580" target="_blank">💬</a>
+      <a href="https://www.instagram.com/kugayasgarden" target="_blank">📷</a>
+      <a href="https://www.facebook.com/profile.php?id=61584452922600" target="_blank">👤</a>
+      <a href="https://www.tiktok.com/@kugayasgarden" target="_blank">🎵</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/254792648580" class="wa-float" target="_blank">💬</a>
+
+<script>
+function submitForm() {
+  let valid = true;
+
+  const name = document.getElementById('name').value.trim();
+  const nameErr = document.getElementById('nameErr');
+  nameErr.style.display = name ? 'none' : 'block';
+  if (!name) valid = false;
+
+  const email = document.getElementById('email').value.trim();
+  const emailErr = document.getElementById('emailErr');
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  emailErr.style.display = emailOk ? 'none' : 'block';
+  if (!emailOk) valid = false;
+
+  const msg = document.getElementById('message').value.trim();
+  const msgErr = document.getElementById('msgErr');
+  msgErr.style.display = msg ? 'none' : 'block';
+  if (!msg) valid = false;
+
+  if (valid) {
+    document.getElementById('successMsg').style.display = 'block';
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('message').value = '';
+  }
+}
+</script>
+</body>
+</html>
